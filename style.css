@@ -4,7 +4,20 @@
 	margin: 0;
 }
 body{
-background-color: #aeded7;
+background: linear-gradient(45deg, #48466D, #3D84A8, #46CDCF, #ABEDD8);
+background-size: 300% 400%;
+animation: colors 15s ease infinite;
+}
+@keyframes colors {
+	0%{
+		background-position: 0% 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0% 50%;
+	}
 }
 img{
 	width: 150px;
@@ -13,12 +26,15 @@ img{
 }
 h1{
 	color: black;
-	font-family: arial,helvetica, sans-serif;
+	font-family: 'Cabin', sans-serif;
 	text-align: center;
 	font-size: 1.2rem;
 	max-width: 400px;
 }
 .container{
+
+	max-width: 1000px;
+	margin: auto;
 	min-height: 80vh;
 	display: flex;
 	flex-direction: column;
@@ -28,21 +44,16 @@ h1{
     -webkit-font-smoothing: antialiased;
     text-align: center;
 }
+.formcontainer{
+	max-width: 300px;
+	padding: 35px;
+	float: right;
+	border-radius: 2px;
+}
 .redesimg{
 	width: 30px;
 	height: 30px;
 	
-}
-button {
-	border-radius: 5px;
-	transform: translateY(-10px);
-  background-color: #3186fe;
-  color: black;
-  padding: 9px 14px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 9px;
 }
 a{
 	text-decoration: none;
@@ -63,4 +74,45 @@ h3{
 		text-decoration: none;
 	color: black;
 	cursor: alias;
+}
+
+button {
+	transform: translateX(-2px);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #205375;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
